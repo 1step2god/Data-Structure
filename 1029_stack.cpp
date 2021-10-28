@@ -6,8 +6,8 @@ using namespace std;
 
 #define MAX 5
 
-int arr[100];	//«Å§i¥ş°ì°}¦Cµ¹¨ç¦¡¥Î 
-int a,index = 0;	//«Å§i¥ş°ìÅÜ¼Æµ¹°}¦C¥Î 
+int arr[100];	//å®£å‘Šå…¨åŸŸé™£åˆ—çµ¦å‡½å¼ç”¨ 
+int a,index = 0;	//å®£å‘Šå…¨åŸŸè®Šæ•¸çµ¦é™£åˆ—ç”¨ 
 
 class Stack {
 	private:
@@ -15,9 +15,9 @@ class Stack {
 		int top;
 	public:
 		Stack();
-		int push_f(void);   // ·s¼W¨ç¼Æ
-		int pop_f(void);    // §R°£¨ç¼Æ
-		void list_f(void);   // ¿é¥X¨ç¼Æ
+		int push_f(void);   // æ–°å¢å‡½æ•¸
+		int pop_f(void);    // åˆªé™¤å‡½æ•¸
+		void list_f(void);   // è¼¸å‡ºå‡½æ•¸
 };
 
 Stack::Stack() {
@@ -25,7 +25,7 @@ Stack::Stack() {
 }
 
 int Stack::push_f(void) {
-	cout << "Please key in several interger:\n";	//¿é¤J­Y¤z¾ã¼Æ«á«öªÅ®æ§Y¥i¦s¤Jstack 
+	cout << "Please key in several interger:\n";	//è¼¸å…¥è‹¥å¹²æ•´æ•¸å¾ŒæŒ‰ç©ºæ ¼å³å¯å­˜å…¥stack 
 	while(cin>>a){
     	arr[index++] = a;
     	char ch = getchar(); 
@@ -35,10 +35,10 @@ int Stack::push_f(void) {
 }
 
 int Stack::pop_f(void) {
-	if(top < 0)  // ·í°ïÅ|¨S¦³¸ê®Æ¦s¦b¡A«hÅã¥Ü¿ù»~
-		cout << "\n °ïÅ|¬OªÅªº !\n";
+	if(top < 0)  // ç•¶å †ç–Šæ²’æœ‰è³‡æ–™å­˜åœ¨ï¼Œå‰‡é¡¯ç¤ºéŒ¯èª¤
+		cout << "\n å †ç–Šæ˜¯ç©ºçš„ !\n";
 	else {
-		cout << "\n " << item[top] << "¤w³Q§R°£\n";
+		cout << "\n " << item[top] << "å·²è¢«åˆªé™¤\n";
 		top--;
 	}
 }
@@ -48,7 +48,7 @@ void Stack::list_f(void) {
 	cout << "\n  ITEM\n";
 		cout << " ------------------\n";
 	cout.setf(ios::left, ios::adjustfield);
-	for(i=0;i<index;i++) {	//¿é¥X©ópush®É¿é¤Jªº­Y¤z¾ã¼Æ
+	for(i=0;i<index;i++) {	//è¼¸å‡ºæ–¼pushæ™‚è¼¸å…¥çš„è‹¥å¹²æ•´æ•¸
     	cout << "  ";
 		cout.width(20);
 		cout<<arr[i]<<"\n";
@@ -56,7 +56,7 @@ void Stack::list_f(void) {
     }
     cout.setf(ios::left, ios::adjustfield);
     cout << " ------------------\n";
-    cout << " Á`¦@¦³: " << i << "\n";	//­pºâ¶µ¼Æ 
+    cout << " ç¸½å…±æœ‰: " << i << "\n";	//è¨ˆç®—é …æ•¸ 
 }
 
 int main() {
@@ -65,12 +65,12 @@ int main() {
 
 	while(1) {
 		cout << "\n *****************************\n";
-		cout << "        <1> ´¡¤J (push)\n";
-		cout << "        <2> §R°£ (pop)\n";
-		cout << "        <3> ¦C¥X\n";
-		cout << "        <4> °h¥X\n";
+		cout << "        <1> æ’å…¥ (push)\n";
+		cout << "        <2> åˆªé™¤ (pop)\n";
+		cout << "        <3> åˆ—å‡º\n";
+		cout << "        <4> é€€å‡º\n";
 		cout << " *****************************\n";
-		cout << " ½Ğ¿é¤J¿ï¶µ:";
+		cout << " è«‹è¼¸å…¥é¸é …:";
 		while(cin.get(option) && option == '\n');
 		cin.get();
 		switch(option) {
