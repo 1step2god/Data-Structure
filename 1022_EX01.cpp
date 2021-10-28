@@ -5,24 +5,24 @@ using namespace std;
 void generateSquare(int n){
     int magicSquare[n][n];
  
-    // ©Ò¦³ªÅ®æÂk¹s 
+    // æ‰€æœ‰ç©ºæ ¼æ­¸é›¶ 
     memset(magicSquare, 0, sizeof(magicSquare));
  
-    // ³]©w²Ä¤@­Ó¼Æªº¦ì¸m 
+    // è¨­å®šç¬¬ä¸€å€‹æ•¸çš„ä½ç½® 
     int i = n / 2;
     int j = n - 1;
  
-    // ¨Ì§Ç§â©Ò¦³­È©ñ¶iÅ]³N¤è°} 
+    // ä¾åºæŠŠæ‰€æœ‰å€¼æ”¾é€²é­”è¡“æ–¹é™£ 
     for (int num = 1; num <= n * n;) {
         if (i == -1 && j == n) {
             j = n - 2;
             i = 0;
         }
         else {
-            // ¦pªGj=5«h¶W¥X¥k¬É.Âk¹s©¹¥ª©ñ 
+            // å¦‚æœj=5å‰‡è¶…å‡ºå³ç•Œ.æ­¸é›¶å¾€å·¦æ”¾ 
             if (j == n)    j = 0;
  
-            // ¦pªGi<0«h¶W¥X¤W¬É.¥O-1¬°i­È°µ©w¦ì 
+            // å¦‚æœi<0å‰‡è¶…å‡ºä¸Šç•Œ.ä»¤-1ç‚ºiå€¼åšå®šä½ 
             if (i < 0)    i = n - 1;
         }
         if (magicSquare[i][j]){
@@ -31,13 +31,13 @@ void generateSquare(int n){
             continue;
         }
         else
-            magicSquare[i][j] = num++; //©ñ¼Æ¦r
+            magicSquare[i][j] = num++; //æ”¾æ•¸å­—
  
         j++;
         i--;
     }
  
-    //¿é¥Xµ²ªG
+    //è¼¸å‡ºçµæœ
     cout << "The Magic Square for n=" << n << "\n\n";
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++){
